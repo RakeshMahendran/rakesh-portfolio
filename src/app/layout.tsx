@@ -23,15 +23,30 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name} — GenAI Full Stack Engineer`,
     template: `%s | ${DATA.name}`,
   },
-  description: DATA.description,
+  description:
+    "GenAI Full Stack Engineer building LLM and RAG systems end-to-end — frontend, backend, retrieval pipelines, and agent orchestration.",
+  keywords: [
+    "GenAI",
+    "RAG",
+    "LLM",
+    "Full Stack Engineer",
+    "LangChain",
+    "AWS Bedrock",
+    "Next.js",
+    "Django",
+    "Rakesh Mahendran",
+  ],
+  authors: [{ name: DATA.name }],
+  creator: DATA.name,
   openGraph: {
-    title: `${DATA.name}`,
-    description: DATA.description,
+    title: `${DATA.name} — GenAI Full Stack Engineer`,
+    description:
+      "GenAI Full Stack Engineer building LLM and RAG systems end-to-end — frontend, backend, retrieval pipelines, and agent orchestration.",
     url: DATA.url,
-    siteName: `${DATA.name}`,
+    siteName: DATA.name,
     locale: "en_US",
     type: "website",
   },
@@ -47,7 +62,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: `${DATA.name}`,
+    title: `${DATA.name} — GenAI Full Stack Engineer`,
     card: "summary_large_image",
   },
   verification: {
@@ -70,7 +85,7 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
               <FlickeringGrid

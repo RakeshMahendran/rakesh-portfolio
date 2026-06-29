@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 import { DATA } from "@/data/resume";
+import { Mail, MapPin } from "lucide-react";
 
 export default function ContactSection() {
   return (
@@ -19,25 +20,41 @@ export default function ContactSection() {
           }}
         />
       </div>
-      <div className="relative flex flex-col items-center gap-4 text-center">
+      <div className="relative flex flex-col items-center gap-5 text-center">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
           Get in Touch
         </h2>
         <p className="mx-auto max-w-lg text-muted-foreground text-balance">
-          Want to chat? Just shoot me a dm{" "}
+          Open to full-time roles, freelance projects, and interesting
+          conversations about AI/LLM systems.{" "}
           <Link
-            href={DATA.contact.social.X.url}
+            href={`mailto:${DATA.contact.email}`}
+            className="text-foreground font-medium hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+          >
+            Drop me an email
+          </Link>{" "}
+          or reach out on{" "}
+          <Link
+            href={DATA.contact.social.LinkedIn.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+            className="text-foreground font-medium hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
           >
-            with a direct question on twitter
-          </Link>{" "}
-          and I&apos;ll respond whenever I can. I will ignore all
-          soliciting.
+            LinkedIn
+          </Link>
+          .
         </p>
+        <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <Mail className="size-3.5" aria-hidden />
+            {DATA.contact.email}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <MapPin className="size-3.5" aria-hidden />
+            {DATA.location} — open to remote / relocation
+          </span>
+        </div>
       </div>
     </div>
   );
 }
-
