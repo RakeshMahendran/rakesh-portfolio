@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(DATA.url),
+  metadataBase: new URL("https://rakesh-portfolio-jade-pi.vercel.app"),
   title: {
     default: `${DATA.name} — GenAI Full Stack Engineer`,
     template: `%s | ${DATA.name}`,
